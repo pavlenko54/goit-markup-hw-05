@@ -7,6 +7,8 @@
 --secondary-text-color:#FFF;
 --paragraph-text-color:#757575;
 --bacground-color:#2F303A;
+--timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 p, h1, h2, h3, h4 ,h5, h6{
     padding: 0;
@@ -106,13 +108,13 @@ list-style: none;
 
 .site-nav-item{
     margin-right: 50px;
-  
+    position: relative;
 }
 
 
 
 .site-nav-link{
-
+   
 display: flex;
 padding-top: 32px;
 padding-bottom: 32px;
@@ -126,12 +128,26 @@ padding-bottom: 32px;
     line-height: 1.14;
     letter-spacing: 0.02em;
 }
+.active::after {
+content: "";
+bottom: 0;
+position: absolute;
+display: block;
+width: 100%;
+height: 4px;
+border-radius: 2px;
+background-color: var(--accent-color);
+
+transition: 250ms var(--timing-function);
+}
 
 
 .site-nav-link:hover,
 .site-nav-link:focus{
 color: var(--accent-color);
+transition: 250ms var(--timing-function);
 }
+
 .contacts{
 display: flex;
 margin-left: auto;
@@ -164,11 +180,13 @@ text-decoration: none;
     .contacts-link:hover,
     .contacts-link:focus {
     color: var(--accent-color);
+    transition: 250ms var(--timing-function);
     }
     
     .contacts-link:hover .header-contacts-icon,
     .contacts-link:focus .header-contacts-icon{
     fill: currentColor;
+    transition: 250ms var(--timing-function);
     }
 
 
@@ -230,6 +248,8 @@ cursor: pointer;
     position: fixed;
     top: 0;
     left: 0;
+    /* transition: 2500ms var(--timing-function); */
+    transform: scale(1);
 
     width: 100%;
     height: 100%;
@@ -243,6 +263,8 @@ background-color: rgba(0, 0, 0, 0.20);
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
+    /* transition:  2500ms var(--timing-function); */
+    transform: scale();
 }
 
 .modal{
@@ -278,10 +300,6 @@ cursor: pointer;
 background-color: var(--secondary-text-color);
 
 border: solid 1px rgba(0, 0, 0, 0.10);
-}
-
-.modal-icon-close{
-
 }
 
 .overlay{
@@ -327,7 +345,7 @@ align-items: center;
 
 font-size: 14px;
 font-weight: 700;
-line-height: 2.28;
+line-height: 1.2;
 letter-spacing: 0.42px;
 text-transform: uppercase;
 }
@@ -369,10 +387,6 @@ letter-spacing: 1.08px;
 
 .occupation-thumb{
 position: relative;
-}
-
-.occupation-img{
-
 }
 
 .occupation-text{
@@ -473,6 +487,7 @@ color: var(--color-icon);
 .team-socials-link:focus {
 background-color: var(--accent-color);
 fill: var(--background-color-before);
+transition: 250ms var(--timing-function);
 }
 
 .team-socials-icon{
@@ -483,6 +498,7 @@ fill: currentColor;
 .team-socials-link:hover .team-socials-icon,
 .team-socials-link:focus .team-socials-icon{
     fill: var(--secondary-text-color);
+    transition: 250ms var(--timing-function);
 }
 
 
@@ -533,11 +549,13 @@ fill: var(--color-icon);
 .clients-link:hover,
 .clients-link:focus {
     border: 1px solid var(--accent-color);
+    transition: 250ms var(--timing-function);
 }
 
 .clients-link:hover,
 .clients-link:focus{
 fill: var(--accent-color);
+transition: 250ms var(--timing-function);
 }
 
 
@@ -598,6 +616,7 @@ letter-spacing: 0.28px;}
 
 .contacts-link-footer:hover,
 .contacts-link-footer:focus{color: var(--accent-color);
+    transition: 250ms var(--timing-function);
 }
 
 .footer-text{
@@ -656,6 +675,7 @@ fill: var(--secondary-text-color);
 .footer-socials-link:hover,
 .footer-socials-link:focus{
     background-color: var(--accent-color);
+    transition: 250ms var(--timing-function);
     }
 /* ------------------portfolio-section----------------------- */
 .portfolio-list{
@@ -689,6 +709,7 @@ fill: var(--secondary-text-color);
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
     background: var(--accent-color);
     color: var(--secondary-text-color);
+    transition: 250ms var(--timing-function);
 
 text-align: center;
 font-size: 16px;
@@ -723,7 +744,8 @@ letter-spacing: 0.48px;
 .projects-list-link:hover,
 .projects-list-link:focus{
     box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
-    }
+    transition: 250ms var(--timing-function);    
+}
 
 
 .card-text{
